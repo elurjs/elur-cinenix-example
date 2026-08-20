@@ -1,0 +1,20 @@
+import {
+  getMovieBySlug,
+  getReviews,
+  getAverageRating,
+  getLikeCount,
+} from "../../../data/store.ts";
+
+export async function GET(_request: Request, ctx: { params: Record<string, string | string[]> }): Promise<Response> {
+  const slug = Array.isArray(ctx.params.slug) ? ctx.params.slug[0] : ctx.params.slug;
+  const movie = getMovieBySlug(slug);
+  if (!movie) {
+    return Response.json({ error: "Película no encontrada" }, { status: 404 });
+  }
+  return Response.json({
+    movie,
+    reviews: getReviews(movie.id),
+    averageRating: getAverageRating(movie.id),
+    likes: getLikeCount(movie.id),
+  });
+}

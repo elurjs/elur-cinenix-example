@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.nix-js/
+.vercel/
+netlify/
+
+# Logs
+*.log

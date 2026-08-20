@@ -1,0 +1,8 @@
+[build]
+  command = "nix-js-kit build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/__nix-js-kit"
+  status = 200

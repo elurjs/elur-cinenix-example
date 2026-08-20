@@ -1,0 +1,30 @@
+{
+  "name": "cinenix-example",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nix-js-kit build",
+    "dev": "nix-js-kit dev",
+    "start": "nix-js-kit start",
+    "preview": "nix-js-kit preview",
+    "adapter": "nix-js-kit adapter",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:lighthouse": "lighthouse http://127.0.0.1:3000/ --config-path=lighthouse/config.cjs --output-path=lighthouse/baseline.json"
+  },
+  "dependencies": {
+    "@deijose/nix-js": "^3.0.0",
+    "@deijose/nix-js-kit": "^2.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "happy-dom": "^20.8.3",
+    "lighthouse": "^13.4.1",
+    "playwright": "^1.62.1",
+    "tsx": "^4.19.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0"
+  }
+}
