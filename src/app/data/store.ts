@@ -1,5 +1,7 @@
-// In-memory store: movies, reviews, ratings and likes. No external
-// dependencies so the whole app runs on Node and Bun alike.
+/**
+ * In-memory store for movies, reviews, ratings and likes. No external
+ * dependencies so the whole app runs on Node and Bun alike.
+ */
 
 export interface Movie {
   id: number;

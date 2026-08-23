@@ -9,7 +9,10 @@ export async function register(input: { name?: unknown; email?: unknown }): Prom
   if (!email.includes("@") || email.length > 254) {
     return fail({ email: "Correo inválido" }, 400);
   }
-  // Demo: no se persiste nada, solo se redirige al catálogo.
+  /**
+   * Demo scope: nothing is persisted; the action only logs and redirects
+   * to the catalog.
+   */
   console.log(`[register] ${name} <${email}>`);
   return redirect(303, "/movies?registered=1");
 }

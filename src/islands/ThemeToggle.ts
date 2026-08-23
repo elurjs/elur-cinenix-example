@@ -11,7 +11,6 @@ export default function ThemeToggle(props: ThemeToggleProps): NixTemplate {
       const stored = localStorage.getItem("cinenix-theme");
       if (stored) return stored;
     } catch {
-      // ignore
     }
     const match = document.cookie.match(/theme=([^;]+)/);
     return match?.[1] ?? null;
@@ -44,7 +43,6 @@ export default function ThemeToggle(props: ThemeToggleProps): NixTemplate {
     try {
       localStorage.setItem("cinenix-theme", next);
     } catch {
-      // ignore
     }
   }
 
