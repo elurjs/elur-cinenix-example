@@ -3,6 +3,7 @@ node_modules/
 
 # Build output
 dist/
+.elur/
 .nix-js/
 .vercel/
 netlify/
@@ -13,3 +14,6 @@ netlify/
 # Playwright artifacts
 test-results/
 playwright-report/
+
+# Temp
+migrate.sh

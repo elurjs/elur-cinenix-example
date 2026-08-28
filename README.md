@@ -1,7 +1,7 @@
-# CineNix — catálogo de películas con Nix.js Kit
+# CineElur — catálogo de películas con Elur Kit
 
 Proyecto de ejemplo completo que demuestra **todas** las funcionalidades de
-`@deijose/nix-js-kit`, distinto al blog: catálogo de películas con reseñas,
+`@elurjs/kit`, distinto al blog: catálogo de películas con reseñas,
 ratings, búsqueda instantánea, documentación con rutas catch-all y páginas de
 marketing.
 
@@ -17,7 +17,7 @@ marketing.
 | Layouts + `layout.data.ts` | `layout.ts` raíz y del grupo de marketing (tema vía cookie) |
 | Páginas de error | `404.page.ts` y `500.page.ts` |
 | Server actions | `movies/[slug]/page.action.ts` (`addReview`) — **scopeada en ruta dinámica** |
-| Progressive enhancement | Formulario de reseñas sin JavaScript (`POST /__nix-js/actions`) |
+| Progressive enhancement | Formulario de reseñas sin JavaScript (`POST /__elur/actions`) |
 | API routes | `api/movies/**` (GET/POST, parámetros dinámicos, validación) |
 | Islands | `ThemeToggle` (load), `LikeButton` (load), `SearchMovies` (idle), `RatingStars` (visible), `ReviewForm` (visible) |
 | Streaming | `loading.ts` global y `movies/[slug]/loading.ts` |
@@ -34,7 +34,7 @@ bun run build        # SSG → dist/
 bun run start        # SSR + streaming + ISR en http://127.0.0.1:3000
 bun run dev          # dev server con hot reload (supervisor + worker)
 bun run preview      # sirve dist/ con fallback SSR
-bun run adapter node # genera .nix-js/node-server.mjs
+bun run adapter node # genera .elur/node-server.mjs
 bunx tsc --noEmit    # typecheck
 bun run test:e2e     # E2E en Chrome headless (requiere: bunx playwright install chromium)
 ```
@@ -56,7 +56,7 @@ La suite `e2e/cinenix.spec.ts` cubre con un navegador real:
 ## Notas
 
 - Las actions en rutas dinámicas se scopedan por la URL concreta: el cliente
-  llama `nixJsAction("addReview", { page: "/movies/inception" })` y el servidor
+  llama `elurJsAction("addReview", { page: "/movies/inception" })` y el servidor
   lo resuelve al patrón `/movies/:slug`.
 - El bundle de hidratación se construye con un wrapper de Vite que inyecta el
   plugin de interpolación automáticamente (los `href` parciales funcionan

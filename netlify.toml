@@ -1,8 +1,8 @@
 [build]
-  command = "nix-js-kit build"
+  command = "elur-kit build"
   publish = "dist"
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/__nix-js-kit"
+  to = "/.netlify/functions/__elur-kit"
   status = 200

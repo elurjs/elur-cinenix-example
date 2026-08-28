@@ -1,5 +1,5 @@
-import { html, signal, computed } from "@deijose/nix-js";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html, signal, computed } from "@elurjs/core";
+import type { ElurTemplate } from "@elurjs/core";
 import type { Movie } from "../app/data/store.ts";
 
 export interface SearchMoviesProps {
@@ -8,7 +8,7 @@ export interface SearchMoviesProps {
   initialGenre?: string | null;
 }
 
-export default function SearchMovies(props: SearchMoviesProps): NixTemplate {
+export default function SearchMovies(props: SearchMoviesProps): ElurTemplate {
   const query = signal("");
   const genre = signal<string | null>(props.initialGenre ?? null);
 

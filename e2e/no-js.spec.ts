@@ -6,7 +6,7 @@ test.use({ javaScriptEnabled: false });
 
 test("home renders without JS", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator("h1").first()).toContainText("CineNix");
+  await expect(page.locator("h1").first()).toContainText("CineElur");
 });
 
 test("catalog renders without JS", async ({ page }) => {

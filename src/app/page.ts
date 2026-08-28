@@ -1,17 +1,17 @@
-import { html } from "@deijose/nix-js";
-import type { PageProps } from "@deijose/nix-js-kit";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html } from "@elurjs/core";
+import type { PageProps } from "@elurjs/kit";
+import type { ElurTemplate } from "@elurjs/core";
 import type { HomeData } from "./page.data.ts";
 import type { Movie } from "./data/store.ts";
 
-export default function HomePage({ data }: PageProps<HomeData>): NixTemplate {
+export default function HomePage({ data }: PageProps<HomeData>): ElurTemplate {
   return html`
     <section style="text-align: center; padding: 3rem 0 2rem;">
-      <h1>${data.greeting} a CineNix 🎬</h1>
+      <h1>${data.greeting} a CineElur 🎬</h1>
       <p class="muted">
         Catálogo de ${data.genres.length} géneros ·
         ${data.totalMinutes} minutos de cine destacado ·
-        generado con Nix.js Kit
+        generado con Elur Kit
       </p>
       <a href="/movies" class="btn btn-primary" style="font-size: 1rem;">Explorar catálogo</a>
     </section>

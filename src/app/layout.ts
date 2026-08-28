@@ -1,11 +1,11 @@
-import { html, signal } from "@deijose/nix-js";
-import { island } from "@deijose/nix-js-kit";
-import type { LayoutProps } from "@deijose/nix-js-kit";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html, signal } from "@elurjs/core";
+import { island } from "@elurjs/kit";
+import type { LayoutProps } from "@elurjs/kit";
+import type { ElurTemplate } from "@elurjs/core";
 import type { LayoutData } from "./layout.data.ts";
 import ThemeToggle from "../islands/ThemeToggle.ts";
 
-export default function RootLayout({ children, data }: LayoutProps<LayoutData>): NixTemplate {
+export default function RootLayout({ children, data }: LayoutProps<LayoutData>): ElurTemplate {
   const visited = signal(0);
   const genreCount = data?.genreCount ?? 0;
 
@@ -75,7 +75,7 @@ export default function RootLayout({ children, data }: LayoutProps<LayoutData>):
     </style>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/">🎬 CineNix</a>
+        <a class="brand" href="/">🎬 CineElur</a>
         <nav class="nav-links">
           <a href="/">Inicio</a>
           <a href="/movies">Catálogo</a>
@@ -96,7 +96,7 @@ export default function RootLayout({ children, data }: LayoutProps<LayoutData>):
     </main>
     <footer class="site-footer">
       <div class="container">
-        <p>CineNix — demo de <strong>Nix.js Kit</strong>: SSG, SSR, ISR, streaming, islands, server actions y API routes.</p>
+        <p>CineElur — demo de <strong>Elur Kit</strong>: SSG, SSR, ISR, streaming, islands, server actions y API routes.</p>
       </div>
     </footer>
   `;

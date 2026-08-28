@@ -1,12 +1,12 @@
-import { html } from "@deijose/nix-js";
-import { island } from "@deijose/nix-js-kit";
-import type { PageProps } from "@deijose/nix-js-kit";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html } from "@elurjs/core";
+import { island } from "@elurjs/kit";
+import type { PageProps } from "@elurjs/kit";
+import type { ElurTemplate } from "@elurjs/core";
 import type { MoviesData } from "./page.data.ts";
 import type { Movie } from "../data/store.ts";
 import SearchMovies from "../../islands/SearchMovies.ts";
 
-export default function MoviesPage({ data }: PageProps<MoviesData>): NixTemplate {
+export default function MoviesPage({ data }: PageProps<MoviesData>): ElurTemplate {
   return html`
     <h1>Catálogo</h1>
     <p class="muted">${data.movies.length} películas · filtro por género vía query string: ${data.genre ?? "todos"}</p>

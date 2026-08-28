@@ -1,4 +1,4 @@
-import type { PageDataLoad } from "@deijose/nix-js-kit";
+import type { PageDataLoad } from "@elurjs/kit";
 import {
   getMovieBySlug,
   getReviews,

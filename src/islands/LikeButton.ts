@@ -1,12 +1,12 @@
-import { html, signal } from "@deijose/nix-js";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html, signal } from "@elurjs/core";
+import type { ElurTemplate } from "@elurjs/core";
 
 export interface LikeButtonProps {
   slug: string;
   initial: number;
 }
 
-export default function LikeButton(props: LikeButtonProps): NixTemplate {
+export default function LikeButton(props: LikeButtonProps): ElurTemplate {
   const likes = signal(props.initial);
   const pending = signal(false);
 

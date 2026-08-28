@@ -1,6 +1,6 @@
-import { html } from "@deijose/nix-js";
-import type { NixTemplate } from "@deijose/nix-js";
-import type { PageProps, GenerateStaticParams } from "@deijose/nix-js-kit";
+import { html } from "@elurjs/core";
+import type { ElurTemplate } from "@elurjs/core";
+import type { PageProps, GenerateStaticParams } from "@elurjs/kit";
 import type { DocData } from "./page.data.ts";
 import { DOC_KEYS } from "./page.data.ts";
 
@@ -8,7 +8,7 @@ export const generateStaticParams: GenerateStaticParams = async () => {
   return DOC_KEYS.map((slug) => ({ slug: [slug] }));
 };
 
-export default function DocsPage({ data, params }: PageProps<DocData>): NixTemplate {
+export default function DocsPage({ data, params }: PageProps<DocData>): ElurTemplate {
   const segments = Array.isArray(params.slug) ? params.slug : [params.slug ?? ""];
   return html`
     <h1>📚 ${data.title}</h1>

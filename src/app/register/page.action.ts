@@ -1,4 +1,4 @@
-import { fail, redirect } from "@deijose/nix-js-kit";
+import { fail, redirect } from "@elurjs/kit";
 
 export async function register(input: { name?: unknown; email?: unknown }): Promise<unknown> {
   const name = typeof input.name === "string" ? input.name.trim() : "";

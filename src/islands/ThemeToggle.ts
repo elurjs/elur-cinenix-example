@@ -1,14 +1,14 @@
-import { html, signal } from "@deijose/nix-js";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html, signal } from "@elurjs/core";
+import type { ElurTemplate } from "@elurjs/core";
 
 export interface ThemeToggleProps {
   initial?: string;
 }
 
-export default function ThemeToggle(props: ThemeToggleProps): NixTemplate {
+export default function ThemeToggle(props: ThemeToggleProps): ElurTemplate {
   function readClientTheme(): string | null {
     try {
-      const stored = localStorage.getItem("cinenix-theme");
+      const stored = localStorage.getItem("cineelur-theme");
       if (stored) return stored;
     } catch {
     }
@@ -41,7 +41,7 @@ export default function ThemeToggle(props: ThemeToggleProps): NixTemplate {
     apply(next);
     document.cookie = `theme=${next}; Path=/; Max-Age=31536000`;
     try {
-      localStorage.setItem("cinenix-theme", next);
+      localStorage.setItem("cineelur-theme", next);
     } catch {
     }
   }

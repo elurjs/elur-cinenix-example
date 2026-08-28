@@ -1,9 +1,9 @@
-import { html } from "@deijose/nix-js";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html } from "@elurjs/core";
+import type { ElurTemplate } from "@elurjs/core";
 
-export default function PricingPage(): NixTemplate {
+export default function PricingPage(): ElurTemplate {
   return html`
-    <h1>Planes de CineNix</h1>
+    <h1>Planes de CineElur</h1>
     <p class="muted">Precios simples para una página generada desde un route group.</p>
     <div class="movie-grid">
       <div class="card">

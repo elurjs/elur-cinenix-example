@@ -24,8 +24,8 @@ test.afterEach(async ({ page }) => {
 
 test("home page: SSG, title and islands hydrate (ThemeToggle load)", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveTitle(/CineNix|Nix\.js Kit/);
-  await expect(page.locator("h1")).toContainText("CineNix");
+  await expect(page).toHaveTitle(/CineElur|Elur\.js Kit/);
+  await expect(page.locator("h1")).toContainText("CineElur");
   // ThemeToggle island hydrated: clicking toggles data-theme on <html>.
   const themeBtn = page.getByRole("button", { name: /Cambiar tema/ });
   await expect(themeBtn).toBeVisible();
@@ -34,7 +34,7 @@ test("home page: SSG, title and islands hydrate (ThemeToggle load)", async ({ pa
   const after = await page.evaluate(() => document.documentElement.getAttribute("data-theme"));
   expect(after).not.toBe(before);
   // Persisted to localStorage + cookie.
-  const stored = await page.evaluate(() => localStorage.getItem("cinenix-theme"));
+  const stored = await page.evaluate(() => localStorage.getItem("cineelur-theme"));
   expect(stored).toBe(after);
 });
 
@@ -113,7 +113,7 @@ test("THEME PERSISTENCE: dark survives the register redirect", async ({ page }) 
   // Simulate a returning user with the dark preference stored.
   await page.addInitScript(() => {
     try {
-      localStorage.setItem("cinenix-theme", "dark");
+      localStorage.setItem("cineelur-theme", "dark");
       document.cookie = "theme=dark; Path=/";
     } catch {
       // ignore

@@ -1,7 +1,7 @@
-import { html } from "@deijose/nix-js";
-import { island } from "@deijose/nix-js-kit";
-import type { NixTemplate } from "@deijose/nix-js";
-import type { PageProps, GenerateStaticParams } from "@deijose/nix-js-kit";
+import { html } from "@elurjs/core";
+import { island } from "@elurjs/kit";
+import type { ElurTemplate } from "@elurjs/core";
+import type { PageProps, GenerateStaticParams } from "@elurjs/kit";
 import type { MovieData } from "./page.data.ts";
 import { movieSlugs } from "../../data/store.ts";
 import LikeButton from "../../../islands/LikeButton.ts";
@@ -12,7 +12,7 @@ export const generateStaticParams: GenerateStaticParams = async () => {
   return movieSlugs().map((slug) => ({ slug }));
 };
 
-export default function MoviePage({ data, params }: PageProps<MovieData>): NixTemplate {
+export default function MoviePage({ data, params }: PageProps<MovieData>): ElurTemplate {
   const slug = typeof params.slug === "string" ? params.slug : params.slug[0];
 
   if (!data.movie) {
@@ -54,14 +54,14 @@ export default function MoviePage({ data, params }: PageProps<MovieData>): NixTe
       <h2>Reseñas (${data.reviews.length})</h2>
       <div class="review-list">
         ${data.reviews.length > 0
-          ? data.reviews.map((review) => html`
+      ? data.reviews.map((review) => html`
               <div class="card" style="padding: 0.9rem 1.1rem;">
                 <strong>${review.author}</strong>
                 <span class="stars" style="font-size: 1rem;">${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</span>
                 <p style="font-size: 0.95rem; margin: 0.35rem 0 0;">${review.body}</p>
               </div>
             `)
-          : html`<p class="muted">Sé el primero en reseñar esta película.</p>`}
+      : html`<p class="muted">Sé el primero en reseñar esta película.</p>`}
       </div>
       ${island("ReviewForm", ReviewForm, { slug: movie.slug, page: `/movies/${movie.slug}` }, "visible")}
     </section>

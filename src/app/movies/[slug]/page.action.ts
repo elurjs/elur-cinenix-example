@@ -1,4 +1,4 @@
-import { fail, redirect } from "@deijose/nix-js-kit";
+import { fail, redirect } from "@elurjs/kit";
 import { getMovieBySlug, addReview as createReview } from "../../data/store.ts";
 
 function cleanAuthor(value: unknown): string | null {
@@ -23,7 +23,7 @@ function cleanRating(value: unknown): number | null {
 
 /**
  * Server action: adds a review for a movie. Scoped to the dynamic route
- * `/movies/:slug`; works from the client (nixJsAction) and from a plain form
+ * `/movies/:slug`; works from the client (elurJsAction) and from a plain form
  * (progressive enhancement).
  */
 export async function addReview(input: { slug?: string; author?: unknown; rating?: unknown; body?: unknown }): Promise<unknown> {

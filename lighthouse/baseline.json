@@ -689,7 +689,7 @@
             "entity": "127.0.0.1"
           },
           {
-            "url": "http://127.0.0.1:4000/_nix-js/entry-client.js",
+            "url": "http://127.0.0.1:4000/_elur/entry-client.js",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "cache": "none",
@@ -707,7 +707,7 @@
             "entity": "127.0.0.1"
           },
           {
-            "url": "http://127.0.0.1:4000/_nix-js/assets/ThemeToggle-DFK94X5Z.js",
+            "url": "http://127.0.0.1:4000/_elur/assets/ThemeToggle-DFK94X5Z.js",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "cache": "none",
@@ -725,7 +725,7 @@
             "entity": "127.0.0.1"
           },
           {
-            "url": "http://127.0.0.1:4000/_nix-js/assets/html-9etwpf42.js",
+            "url": "http://127.0.0.1:4000/_elur/assets/html-9etwpf42.js",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "cache": "none",
@@ -1410,19 +1410,19 @@
             ]
           },
           {
-            "name": "http://127.0.0.1:4000/_nix-js/entry-client.js",
+            "name": "http://127.0.0.1:4000/_elur/entry-client.js",
             "resourceBytes": 28082,
             "encodedBytes": 28084,
             "unusedBytes": 17547
           },
           {
-            "name": "http://127.0.0.1:4000/_nix-js/assets/ThemeToggle-DFK94X5Z.js",
+            "name": "http://127.0.0.1:4000/_elur/assets/ThemeToggle-DFK94X5Z.js",
             "resourceBytes": 796,
             "encodedBytes": 802,
             "unusedBytes": 173
           },
           {
-            "name": "http://127.0.0.1:4000/_nix-js/assets/html-9etwpf42.js",
+            "name": "http://127.0.0.1:4000/_elur/assets/html-9etwpf42.js",
             "resourceBytes": 8151,
             "encodedBytes": 8151,
             "unusedBytes": 6929
@@ -2407,7 +2407,7 @@
         ],
         "items": [
           {
-            "url": "http://127.0.0.1:4000/_nix-js/entry-client.js",
+            "url": "http://127.0.0.1:4000/_elur/entry-client.js",
             "totalBytes": 28216
           },
           {
@@ -2415,11 +2415,11 @@
             "totalBytes": 9350
           },
           {
-            "url": "http://127.0.0.1:4000/_nix-js/assets/html-9etwpf42.js",
+            "url": "http://127.0.0.1:4000/_elur/assets/html-9etwpf42.js",
             "totalBytes": 8282
           },
           {
-            "url": "http://127.0.0.1:4000/_nix-js/assets/ThemeToggle-DFK94X5Z.js",
+            "url": "http://127.0.0.1:4000/_elur/assets/ThemeToggle-DFK94X5Z.js",
             "totalBytes": 932
           }
         ],
@@ -3022,19 +3022,19 @@
         ],
         "items": [
           {
-            "url": "http://127.0.0.1:4000/_nix-js/entry-client.js",
+            "url": "http://127.0.0.1:4000/_elur/entry-client.js",
             "cacheLifetimeMs": 0,
             "totalBytes": 28216,
             "wastedBytes": 28216
           },
           {
-            "url": "http://127.0.0.1:4000/_nix-js/assets/html-9etwpf42.js",
+            "url": "http://127.0.0.1:4000/_elur/assets/html-9etwpf42.js",
             "cacheLifetimeMs": 0,
             "totalBytes": 8282,
             "wastedBytes": 8282
           },
           {
-            "url": "http://127.0.0.1:4000/_nix-js/assets/ThemeToggle-DFK94X5Z.js",
+            "url": "http://127.0.0.1:4000/_elur/assets/ThemeToggle-DFK94X5Z.js",
             "cacheLifetimeMs": 0,
             "totalBytes": 932,
             "wastedBytes": 932
@@ -3159,7 +3159,7 @@
                 "width": 90,
                 "height": 25
               },
-              "snippet": "<a href=\"/movies/inception\" data-nix-a-0=\"href\">",
+              "snippet": "<a href=\"/movies/inception\" data-elur-a-0=\"href\">",
               "nodeLabel": "Inception"
             },
             "value": {
@@ -3421,7 +3421,7 @@
               "height": 102
             },
             "snippet": "<h1>",
-            "nodeLabel": "Bienvenido a CineNix 🎬"
+            "nodeLabel": "Bienvenido a CineElur 🎬"
           }
         ]
       },
@@ -3531,20 +3531,20 @@
                   "isLongest": true,
                   "children": {
                     "86242.2": {
-                      "url": "http://127.0.0.1:4000/_nix-js/entry-client.js",
+                      "url": "http://127.0.0.1:4000/_elur/entry-client.js",
                       "navStartToEndTime": 66,
                       "transferSize": 28216,
                       "isLongest": true,
                       "children": {
                         "86242.5": {
-                          "url": "http://127.0.0.1:4000/_nix-js/assets/html-9etwpf42.js",
+                          "url": "http://127.0.0.1:4000/_elur/assets/html-9etwpf42.js",
                           "navStartToEndTime": 76,
                           "transferSize": 8282,
                           "isLongest": true,
                           "children": {}
                         },
                         "86242.4": {
-                          "url": "http://127.0.0.1:4000/_nix-js/assets/ThemeToggle-DFK94X5Z.js",
+                          "url": "http://127.0.0.1:4000/_elur/assets/ThemeToggle-DFK94X5Z.js",
                           "navStartToEndTime": 76,
                           "transferSize": 932,
                           "children": {}

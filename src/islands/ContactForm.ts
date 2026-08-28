@@ -1,13 +1,13 @@
-import { html, signal } from "@deijose/nix-js";
-import { nixJsAction } from "@deijose/nix-js-kit/action";
-import { navigateTo } from "@deijose/nix-js-kit/router";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html, signal } from "@elurjs/core";
+import { elurJsAction } from "@elurjs/kit/action";
+import { navigateTo } from "@elurjs/kit/router";
+import type { ElurTemplate } from "@elurjs/core";
 
-export default function ContactForm(): NixTemplate {
+export default function ContactForm(): ElurTemplate {
   const name = signal("");
   const email = signal("");
   const message = signal("");
-  const action = nixJsAction("sendMessage", { page: "/contact" });
+  const action = elurJsAction("sendMessage", { page: "/contact" });
 
   async function submit(e: Event) {
     e.preventDefault();
@@ -25,15 +25,15 @@ export default function ContactForm(): NixTemplate {
 
   const failure = () => {
     const value = action.data.value;
-    return value && typeof value === "object" && "__nix_js_action_failure" in value
+    return value && typeof value === "object" && "__elur_js_action_failure" in value
       ? (value as { data?: unknown }).data
       : null;
   };
 
   return html`
-    <form class="card" style="max-width: 480px;" novalidate @submit=${submit} action="/__nix-js/actions" method="POST">
-      <input type="hidden" name="__nix_js_action_name" value="sendMessage" />
-      <input type="hidden" name="__nix_js_action_page" value="/contact" />
+    <form class="card" style="max-width: 480px;" novalidate @submit=${submit} action="/__elur/actions" method="POST">
+      <input type="hidden" name="__elur_js_action_name" value="sendMessage" />
+      <input type="hidden" name="__elur_js_action_page" value="/contact" />
       <div class="form-group">
         <label for="contact-name">Nombre</label>
         <input id="contact-name" name="name" type="text" value=${() => name.value} @input=${(e: Event) => (name.value = (e.target as HTMLInputElement).value)} required />
@@ -51,7 +51,7 @@ export default function ContactForm(): NixTemplate {
       </button>
       ${() => action.error.value ? html`<p class="form-error">${action.error.value.message}</p>` : null}
       ${() => failure() && Object.keys(failure() as Record<string, string>).length > 0 ? html`<p class="form-error">${Object.values(failure() as Record<string, string>).join(" · ")}</p>` : null}
-      ${() => action.data.value && !(typeof action.data.value === "object" && "location" in action.data.value) && !(typeof action.data.value === "object" && "__nix_js_action_failure" in action.data.value) ? html`<p class="form-success">¡Mensaje enviado!</p>` : null}
+      ${() => action.data.value && !(typeof action.data.value === "object" && "location" in action.data.value) && !(typeof action.data.value === "object" && "__elur_js_action_failure" in action.data.value) ? html`<p class="form-success">¡Mensaje enviado!</p>` : null}
     </form>
   `;
 }

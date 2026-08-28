@@ -1,7 +1,7 @@
-import { html, signal, computed } from "@deijose/nix-js";
-import { nixJsAction } from "@deijose/nix-js-kit/action";
-import { navigateTo } from "@deijose/nix-js-kit/router";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html, signal, computed } from "@elurjs/core";
+import { elurJsAction } from "@elurjs/kit/action";
+import { navigateTo } from "@elurjs/kit/router";
+import type { ElurTemplate } from "@elurjs/core";
 
 export interface ReviewFormProps {
   slug: string;
@@ -9,7 +9,7 @@ export interface ReviewFormProps {
   page: string;
 }
 
-export default function ReviewForm(props: ReviewFormProps): NixTemplate {
+export default function ReviewForm(props: ReviewFormProps): ElurTemplate {
   const author = signal("");
   const rating = signal(5);
   const body = signal("");
@@ -17,7 +17,7 @@ export default function ReviewForm(props: ReviewFormProps): NixTemplate {
   const error = signal<string | null>(null);
   const success = signal(false);
 
-  const action = nixJsAction("addReview", { page: props.page });
+  const action = elurJsAction("addReview", { page: props.page });
 
   const starsLabel = computed(() => `${rating.value} / 5`);
 
@@ -59,9 +59,9 @@ export default function ReviewForm(props: ReviewFormProps): NixTemplate {
   // The action name and page are serialized in hidden fields so the same form
   // works without JavaScript (progressive enhancement).
   return html`
-    <form class="card" style="margin-top: 1.5rem;" novalidate @submit=${submit} action="/__nix-js/actions" method="POST">
-      <input type="hidden" name="__nix_js_action_name" value="addReview" />
-      <input type="hidden" name="__nix_js_action_page" value="/movies/${props.slug}" />
+    <form class="card" style="margin-top: 1.5rem;" novalidate @submit=${submit} action="/__elur/actions" method="POST">
+      <input type="hidden" name="__elur_js_action_name" value="addReview" />
+      <input type="hidden" name="__elur_js_action_page" value="/movies/${props.slug}" />
       <input type="hidden" name="slug" value="${props.slug}" />
       <h3>Deja tu reseña</h3>
       <div class="form-group">

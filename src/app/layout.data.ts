@@ -1,4 +1,4 @@
-import type { PageDataLoad } from "@deijose/nix-js-kit";
+import type { PageDataLoad } from "@elurjs/kit";
 import { allGenres } from "./data/store.ts";
 
 export interface LayoutData {
@@ -16,7 +16,7 @@ export interface LayoutData {
   headScripts?: string[];
 }
 
-const THEME_SCRIPT = `try{var t=localStorage.getItem("cinenix-theme")}catch(e){}
+const THEME_SCRIPT = `try{var t=localStorage.getItem("cineelur-theme")}catch(e){}
 t=t||(document.cookie.match(/theme=([^;]+)/)||[])[1]||"light";
 document.documentElement.setAttribute("data-theme",t);`;
 

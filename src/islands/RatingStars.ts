@@ -1,5 +1,5 @@
-import { html, signal } from "@deijose/nix-js";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html, signal } from "@elurjs/core";
+import type { ElurTemplate } from "@elurjs/core";
 
 export interface RatingStarsProps {
   slug: string;
@@ -7,7 +7,7 @@ export interface RatingStarsProps {
   average: number;
 }
 
-export default function RatingStars(props: RatingStarsProps): NixTemplate {
+export default function RatingStars(props: RatingStarsProps): ElurTemplate {
   const rating = signal(props.initial);
   const pending = signal(false);
 

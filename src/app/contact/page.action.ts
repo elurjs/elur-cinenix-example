@@ -1,4 +1,4 @@
-import { fail, redirect } from "@deijose/nix-js-kit";
+import { fail, redirect } from "@elurjs/kit";
 
 function clean(value: unknown, min: number, max: number): string | null {
   if (typeof value !== "string") return null;

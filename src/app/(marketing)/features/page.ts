@@ -1,7 +1,7 @@
-import { html } from "@deijose/nix-js";
-import type { NixTemplate } from "@deijose/nix-js";
+import { html } from "@elurjs/core";
+import type { ElurTemplate } from "@elurjs/core";
 
-export default function FeaturesPage(): NixTemplate {
+export default function FeaturesPage(): ElurTemplate {
   return html`
     <h1>Características</h1>
     <ul>

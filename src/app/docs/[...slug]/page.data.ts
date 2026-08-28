@@ -1,4 +1,4 @@
-import type { PageDataLoad } from "@deijose/nix-js-kit";
+import type { PageDataLoad } from "@elurjs/kit";
 
 export interface DocData {
   path: string[];
@@ -10,7 +10,7 @@ const DOCS: Record<string, { title: string; content: string[] }> = {
   intro: {
     title: "Introducción",
     content: [
-      "CineNix es una demo completa de Nix.js Kit.",
+      "CineElur es una demo completa de Elur Kit.",
       "Esta página usa una ruta catch-all: docs/[...slug]/page.ts.",
       "Cada documento se genera en build time con generateStaticParams.",
     ],
@@ -25,7 +25,7 @@ const DOCS: Record<string, { title: string; content: string[] }> = {
   "server-actions": {
     title: "Server actions",
     content: [
-      "Las server actions viven en page.action.ts y se llaman con nixJsAction().",
+      "Las server actions viven en page.action.ts y se llaman con elurJsAction().",
       "También funcionan desde formularios HTML sin JavaScript.",
     ],
   },
@@ -33,7 +33,7 @@ const DOCS: Record<string, { title: string; content: string[] }> = {
     title: "Streaming",
     content: [
       "Los loading.ts definen shells que se muestran al instante.",
-      "El contenido real llega después desde /__nix-js/render.",
+      "El contenido real llega después desde /__elur/render.",
     ],
   },
 };
