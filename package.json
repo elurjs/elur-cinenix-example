@@ -15,7 +15,7 @@
     "test:lighthouse": "lighthouse http://127.0.0.1:3000/ --config-path=lighthouse/config.cjs --output-path=lighthouse/baseline.json"
   },
   "dependencies": {
-    "@elurjs/core": "^4.0.0",
+    "@elurjs/core": "^4.0.1",
     "@elurjs/kit": "^2.6.0"
   },
   "devDependencies": {
